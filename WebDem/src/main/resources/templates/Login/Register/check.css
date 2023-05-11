@@ -1,0 +1,65 @@
+/* Set the background color of the body */
+body {
+    background-color: #f2f2f2;
+}
+
+/* Center the container and set some padding */
+.container-fluid {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the header */
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Style the login link */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Style the success message */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+
+/* Style the table */
+.table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style the table header */
+thead th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* Style the table cells */
+td {
+    vertical-align: middle;
+}
+
+/* Style the table ID column */
+th:first-child, td:first-child {
+    width: 10%;
+}
+
+/* Style the table email column */
+th:nth-child(2), td:nth-child(2) {
+    width: 30%;
+}
+
+/* Style the table enabled column */
+th:last-child, td:last-child {
+    width: 10%;
+    text-align: center;
+}

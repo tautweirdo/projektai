@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 3px solid #ccc;
+      width: 300px;
+      font-family: Tahoma, Arial Black, sans-serif;
+      font-size: 16px;
+    }
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+      color: #ccc;
+      font-family: Tahoma, Arial Black, sans-serif;
+      font-size: 16px;
+    }
+    input[type="submit"], input[type="button"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 300px;
+      font-family: Tahoma, Arial Black, sans-serif;
+      font-size: 16px;
+    }
+    input[type="button"].cancel {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+<form method="post" action="/registration" th:object="${user}">
+  <h2 style="font-family: Tahoma, Arial Black, sans-serif;">Registracijos forma</h2>
+  <label for="username" style="display: none;">Slapyvardis</label>
+  <input type="text" id="username" name="username" required="required" th:field="*{username}" placeholder="Slapyvardis" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"/>
+  <label for="password" style="display: none;">Slaptažodis</label>
+  <input type="password" id="password" name="password" required="required" th:field="*{password}" placeholder="Slaptažodis" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"/>
+  <label for="confirmPassword" style="display: none;">Patvirtinkite slaptažodį</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" required="required" th:field="*{confirmPassword}" placeholder="Pakartokite slaptažodį" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'"/>
+
+  <input type="submit" value="Registruotis">
+  <a href="/login"><input type="button" value="Prisijungti čia"></a>
+  <input type="button" value="Atšaukti" class="cancel" onclick="cancelForm()">
+</form>
+<script type="text/javascript">
+  function cancelForm() {
+    window.location = "[[@{/}]]";
+  }
+</script>
+</body>
+</html>
